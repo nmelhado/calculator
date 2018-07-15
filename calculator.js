@@ -41,6 +41,7 @@ const div = (num1,num2) => {
 const clear = (num1,num2) => {
   temp = [];
   cur = 0;
+  build = false;
 }
 const computations = [
   add,

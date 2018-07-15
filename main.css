@@ -11,6 +11,7 @@
 }
 * {
   font-size: 1.1em;
+  font-family: 'sans';
 }
 
 #top {
@@ -34,7 +35,7 @@
   border-radius: 5px;
   text-align: center;
   cursor: pointer;
-  margin-top: -76px;
+  margin-top: -90px;
   margin-left: 25px;
 }
 
@@ -51,10 +52,11 @@
 }
 
 #compute {
-  padding: 50px 0;
-  width: 66%;
+  padding: 1.84em 0;
+  width: 32.5%;
   vertical-align: middle;
-  background-color: rgb(207, 193, 193);
+  background-color: rgb(77, 92, 175);
+  color: #fff;
   border: 1px solid #d2d2d2;
   border-radius: 5px;
   text-align: center;
@@ -62,21 +64,22 @@
 }
 
 .number {
-  padding: 50px 0;
-  width: 33%;
+  padding: 1.9em 0;
+  width: 32.5%;
   vertical-align: middle;
-  background-color: rgb(213, 230, 230);
-  border: 1px solid #d2d2d2;
+  background-color: rgb(207, 207, 207);
+  border: 1px solid #aaa;
   border-radius: 5px;
   text-align: center;
   cursor: pointer;
 }
 
 .function {
-  padding: 50px 0;
+  padding: 1.84em 0;
   vertical-align: middle;
-  background-color: rgb(216, 226, 221);
-  border: 1px solid #d2d2d2;
+  background-color: rgb(78, 78, 78);
+  color: #fff;
+  border: 1px solid #333;
   border-radius: 5px;
   text-align: center;
   cursor: pointer;

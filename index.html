@@ -20,13 +20,14 @@
           <div id="8" class="number">8</div>
           <div id="9" class="number">9</div>
           <div id="0" class="number">0</div>
-          <div id="compute">Compute</div>
+          <div id="decimal" class="number">●</div>
+          <div id="compute"><b>=</b></div>
         </div>
         <div id="functions">
-          <div id="add" class="function">+</div>
-          <div id="minus" class="function">-</div>
-          <div id="mult" class="function">*</div>
-          <div id="div" class="function">/</div>
+          <div id="add" class="function"><b>+</b></div>
+          <div id="minus" class="function"><b>-</b></div>
+          <div id="mult" class="function"><b>x</b></div>
+          <div id="div" class="function"><b>/</b></div>
         </div>
       </div>
     </div>
@@ -99,6 +100,9 @@ function result() {
     document.getElementById('0').addEventListener('click', event => {
       process("0")
     });
+    document.getElementById('decimal').addEventListener('click', event => {
+      process(".")
+    });
     document.getElementById('add').addEventListener('click', event => {
       doSomething(0)
     });
@@ -122,6 +126,9 @@ function result() {
     document.addEventListener('keydown', (e) => {
       if(nums.includes(e.key*1)) {
         process(`${e.key}`)
+      }
+      if(e.key === '.') {
+        process(`.`);
       }
       if(e.key === '+') {
         doSomething(0);
