@@ -1,0 +1,43 @@
+<html>
+  <head>
+      <link rel="stylesheet" href="main.css">
+  </head>
+  <body>
+    <div id="calculator">
+      <div id="top">
+          <div id="result"></div>
+      </div>
+      <div id="bottom">
+        <div id="numbers">
+          <div id="1" class="number">1</div>
+          <div id="2" class="number">2</div>
+          <div id="3" class="number">3</div>
+          <div id="4" class="number">4</div>
+          <div id="5" class="number">5</div>
+          <div id="6" class="number">6</div>
+          <div id="7" class="number">7</div>
+          <div id="8" class="number">8</div>
+          <div id="9" class="number">9</div>
+          <div id="0" class="number">0</div>
+        </div>
+        <div id="functions">
+          <div id="add" class="function">+</div>
+          <div id="minus" class="function">-</div>
+          <div id="mult" class="function">*</div>
+          <div id="div" class="function">/</div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="calculator.js"></script>
+  <script>
+    const status = () => {
+      if(temp.length !== 0) {
+        document.getElementById('result').innerHTML = temp[temp.length - 1];
+      } else {
+        document.getElementById('result').innerHTML = cur;
+      }
+    }
+    status();
+  </script>
+</html>
