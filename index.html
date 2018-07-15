@@ -6,6 +6,7 @@
     <div id="calculator">
       <div id="top">
           <div id="result"></div>
+          <div id="clear">CLEAR</div>
       </div>
       <div id="bottom">
         <div id="numbers">
@@ -19,6 +20,7 @@
           <div id="8" class="number">8</div>
           <div id="9" class="number">9</div>
           <div id="0" class="number">0</div>
+          <div id="compute">Compute</div>
         </div>
         <div id="functions">
           <div id="add" class="function">+</div>
@@ -39,5 +41,108 @@
       }
     }
     status();
+    function process(val) {
+      if(build) {
+        temp[temp.length - 1] += val;
+      } else {
+        temp.push(val);
+      }
+      build = true;
+      status();
+    }
+function doSomething(val) {
+  if(temp.length < 3 && temp.length > 0) {
+    temp.push(computations[val]);
+  } else if(temp.length === 0) {
+    temp.push(cur*1);
+    temp.push(computations[val]);
+  } else {
+    result();
+    temp.push(cur*1);
+    temp.push(computations[val]);
+  }
+  build = false;
+}
+function result() {
+  build= false;
+  cur = temp[1](temp[0]*1,temp[2]*1);
+  temp = [];
+  status();
+}
+    document.getElementById('1').addEventListener('click', event => {
+      process("1")
+    });
+    document.getElementById('2').addEventListener('click', event => {
+      process("2")
+    });
+    document.getElementById('3').addEventListener('click', event => {
+      process("3")
+    });
+    document.getElementById('4').addEventListener('click', event => {
+      process("4")
+    });
+    document.getElementById('5').addEventListener('click', event => {
+      process("5")
+    });
+    document.getElementById('6').addEventListener('click', event => {
+      process("6")
+    });
+    document.getElementById('7').addEventListener('click', event => {
+      process("7")
+    });
+    document.getElementById('8').addEventListener('click', event => {
+      process("8")
+    });
+    document.getElementById('9').addEventListener('click', event => {
+      process("9")
+    });
+    document.getElementById('0').addEventListener('click', event => {
+      process("0")
+    });
+    document.getElementById('add').addEventListener('click', event => {
+      doSomething(0)
+    });
+    document.getElementById('minus').addEventListener('click', event => {
+      doSomething(1)
+    });
+    document.getElementById('mult').addEventListener('click', event => {
+      doSomething(2)
+    });
+    document.getElementById('div').addEventListener('click', event => {
+      doSomething(3)
+    });
+    document.getElementById('compute').addEventListener('click', event => {
+      result();
+    });
+    document.getElementById('clear').addEventListener('click', event => {
+      clear();
+      status();
+    });
+    const nums = [1,2,3,4,5,6,7,8,9,0];
+    document.addEventListener('keydown', (e) => {
+      if(nums.includes(e.key*1)) {
+        process(`${e.key}`)
+      }
+      if(e.key === '+') {
+        doSomething(0);
+      }
+      if(e.key === '-') {
+        doSomething(1);
+      }
+      if(e.key === '*') {
+        doSomething(2);
+      }
+      if(e.key === '/') {
+        doSomething(3);
+      }
+      if(e.key === '=' || e.key === 'Enter') {
+        result();
+      }
+      if(e.key === 'Escape') {
+        clear();
+        status();
+      }
+    });
+
   </script>
 </html>

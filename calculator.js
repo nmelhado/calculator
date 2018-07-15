@@ -1,6 +1,6 @@
 let cur = 0;
 let temp = [];
-let build = true;
+let build = false;
 
 const add = (num1,num2) => {
   if(num2) {
@@ -41,14 +41,13 @@ const div = (num1,num2) => {
 const clear = (num1,num2) => {
   temp = [];
   cur = 0;
-  return cur;
 }
-const computations = {
+const computations = [
   add,
   minus,
   mult,
   div
-}
+];
 
 const compute = (fn,num1,num2) => {
   fn(num1,num2);
